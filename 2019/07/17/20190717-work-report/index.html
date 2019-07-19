@@ -11,7 +11,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
-
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("http://xxxxxxx.xxx"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
 
 
   
@@ -81,6 +94,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Yukino" type="application/atom+xml">
+
 
 
 
@@ -131,6 +146,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
+    
   };
 </script>
 
@@ -362,7 +378,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  472
+                  524
                 </span>
               
 
@@ -411,7 +427,7 @@
 <h2 id="Our-image"><a href="#Our-image" class="headerlink" title="Our image"></a>Our image</h2><p><img src="/images/20190712/L10_nozzle.jpg" alt></p>
 <p>#TODO<br>If we can guarantee the position of camera is fixed, image processing will be much easier. </p>
 <h1 id="Two-ideas-to-get-only-the-Taylor-cone"><a href="#Two-ideas-to-get-only-the-Taylor-cone" class="headerlink" title="Two ideas to get only the Taylor cone"></a>Two ideas to get only the Taylor cone</h1><h2 id="Manual-screenshot"><a href="#Manual-screenshot" class="headerlink" title="Manual screenshot"></a>Manual screenshot</h2><p>This method allows user to select which area they want to capture.</p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#img is the origin image</span></span><br><span class="line">cv2.namedWindow(<span class="string">"image"</span>, flags= cv2.WINDOW_NORMAL | cv2.WINDOW_FREERATIO)</span><br><span class="line">cv2.namedWindow(<span class="string">"image_roi"</span>, flags= cv2.WINDOW_NORMAL | cv2.WINDOW_FREERATIO)</span><br><span class="line"></span><br><span class="line">cv2.imshow(<span class="string">"image"</span>, img)</span><br><span class="line"><span class="comment"># 是否显示网格 </span></span><br><span class="line">showCrosshair = <span class="literal">True</span></span><br><span class="line"><span class="comment"># 如果为Ture的话 , 则鼠标的其实位置就作为了roi的中心</span></span><br><span class="line"><span class="comment"># False: 从左上角到右下角选中区域</span></span><br><span class="line">fromCenter = <span class="literal">False</span></span><br><span class="line"><span class="comment"># Select ROI manually </span></span><br><span class="line">rect = cv2.selectROI(<span class="string">"image"</span>, img, showCrosshair, fromCenter)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"选中矩形区域"</span>)</span><br><span class="line">(x, y, w, h) = rect</span><br><span class="line"></span><br><span class="line"><span class="comment"># Crop image</span></span><br><span class="line">imCrop = img[y : y+h, x:x+w]</span><br></pre></td></tr></table></figure>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#img is the origin image</span></span><br><span class="line">cv2.namedWindow(<span class="string">"image"</span>, flags= cv2.WINDOW_NORMAL | cv2.WINDOW_FREERATIO)</span><br><span class="line">cv2.namedWindow(<span class="string">"image_roi"</span>, flags= cv2.WINDOW_NORMAL | cv2.WINDOW_FREERATIO)</span><br><span class="line"></span><br><span class="line">cv2.imshow(<span class="string">"image"</span>, img)</span><br><span class="line"><span class="comment"># 是否显示网格 </span></span><br><span class="line">showCrosshair = <span class="literal">True</span></span><br><span class="line"><span class="comment"># 如果为Ture的话 , 则鼠标的其实位置就作为了roi的中心</span></span><br><span class="line"><span class="comment"># False: 从左上角到右下角选中区域</span></span><br><span class="line">fromCenter = <span class="literal">False</span></span><br><span class="line"><span class="comment"># Select ROI manually </span></span><br><span class="line">rect = cv2.selectROI(<span class="string">"image"</span>, img, showCrosshair, fromCenter)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"选中矩形区域"</span>)</span><br><span class="line">(x, y, w, h) = rect</span><br><span class="line"></span><br><span class="line"><span class="comment"># Crop image</span></span><br><span class="line">imCrop = img[y : y+h, x:x+w]</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="Sample-result"><a href="#Sample-result" class="headerlink" title="Sample result"></a>Sample result</h3><p><strong>Origin</strong><br><img src="/images/20190717/nozzle.png" alt></p>
 <hr>
@@ -421,12 +437,30 @@
 <p><strong>After processing</strong><br><img src="/images/20190717/processed_image_roi_m.png" alt></p>
 <h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>We can easily find that the screenshot one has less noise and do not require further processing to remove the noise.</p>
 <h2 id="Automically-screenshot"><a href="#Automically-screenshot" class="headerlink" title="Automically screenshot"></a>Automically screenshot</h2><p>This method can be implemented iff the camera and nozzle is fixed. This can promise the position of nozzle is fixed so we can capture the Taylor cone part.</p>
-<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">'roi.jpg'</span>)</span><br><span class="line">roi = img1[<span class="number">0</span>:rows, <span class="number">0</span>:cols ]</span><br></pre></td></tr></table></figure>
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">'roi.jpg'</span>)</span><br><span class="line">roi = img1[<span class="number">0</span>:rows, <span class="number">0</span>:cols ]</span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="Sample-result-1"><a href="#Sample-result-1" class="headerlink" title="Sample result"></a>Sample result</h3><p><img src="/images/20190717/processed_image_roi_a.png" alt></p>
 <h3 id="Conclusion-1"><a href="#Conclusion-1" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>This method is hard to locate the position of the Taylor cone.</p>
 <h2 id="Conclusion-2"><a href="#Conclusion-2" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>I prefer to use the manual one to process the image but I need your help in optimize the code to transfer the manual function into automatical function. However, after screenshot, the processed image will contain a rectangular border.</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     
@@ -559,7 +593,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -570,7 +604,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -581,7 +615,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -589,6 +623,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -677,7 +718,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">total words: 1.8k</span>
+  <span class="post-count">total words: 2.5k</span>
 </div>
 
         

@@ -11,7 +11,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
-
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("http://xxxxxxx.xxx"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
 
 
   
@@ -81,6 +94,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Yukino" type="application/atom+xml">
+
 
 
 
@@ -132,6 +147,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
+    
   };
 </script>
 
@@ -363,7 +379,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  105
+                  157
                 </span>
               
 
@@ -411,7 +427,25 @@
 <hr>
 <h1 id="Observe-the-Scaffold"><a href="#Observe-the-Scaffold" class="headerlink" title="Observe the Scaffold"></a>Observe the Scaffold</h1><h2 id="L1000拍摄效果良好，但由于精度太高，调焦时间过长，固定后该情况可以解决"><a href="#L1000拍摄效果良好，但由于精度太高，调焦时间过长，固定后该情况可以解决" class="headerlink" title="L1000拍摄效果良好，但由于精度太高，调焦时间过长，固定后该情况可以解决"></a>L1000拍摄效果良好，但由于精度太高，调焦时间过长，固定后该情况可以解决</h2><p><strong>样品</strong><br><img src="/images/20190718/07181114.jpg" alt><br><img src="/images/20190718/07181216.jpg" alt><br><img src="/images/20190718/07181217.jpg" alt></p>
 <p><strong>Camera position</strong><br><img src="/images/20190718/vertical_camera.jpg" alt></p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     
@@ -544,7 +578,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -555,7 +589,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -566,7 +600,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -574,6 +608,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -662,7 +703,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">total words: 1.8k</span>
+  <span class="post-count">total words: 2.5k</span>
 </div>
 
         
