@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="Python,">
+  <meta name="keywords" content="Image processing,Python,">
 
 
 
@@ -99,18 +99,27 @@
 
 
 
-<meta name="description" content="对0719那个python例子的优化，增加了自动拍照功能 Github: https://github.com/Yukinooo7/Image-processing">
-<meta name="keywords" content="Python">
+<meta name="description" content="对0719那个python例子的优化，增加了自动拍照功能 Github: https://github.com/Yukinooo7/Image-processing 计算了泰勒锥的质心，出现了一些意外之外的情况">
+<meta name="keywords" content="Image processing,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="20190729 work report">
 <meta property="og:url" content="https://www.yukino424.cn/2019/07/29/pycode/index.html">
 <meta property="og:site_name" content="Yukino">
-<meta property="og:description" content="对0719那个python例子的优化，增加了自动拍照功能 Github: https://github.com/Yukinooo7/Image-processing">
+<meta property="og:description" content="对0719那个python例子的优化，增加了自动拍照功能 Github: https://github.com/Yukinooo7/Image-processing 计算了泰勒锥的质心，出现了一些意外之外的情况">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-29T03:26:37.938Z">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190729/centroid/Standard.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190729/centroid/Broken.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190729/centroid/Multijet.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190729/centroid/Huge.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190729/centroid/Tiny.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190729/centroid/Dry.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190729/centroid/Meniscus.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190729/centroid/Discharge.jpg">
+<meta property="og:updated_time" content="2019-07-29T09:11:43.364Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="20190729 work report">
-<meta name="twitter:description" content="对0719那个python例子的优化，增加了自动拍照功能 Github: https://github.com/Yukinooo7/Image-processing">
+<meta name="twitter:description" content="对0719那个python例子的优化，增加了自动拍照功能 Github: https://github.com/Yukinooo7/Image-processing 计算了泰勒锥的质心，出现了一些意外之外的情况">
+<meta name="twitter:image" content="https://www.yukino424.cn/images/20190729/centroid/Standard.jpg">
 
 
 
@@ -336,8 +345,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python-code/" itemprop="url" rel="index">
-                    <span itemprop="name">Python code</span>
+                  <a href="/categories/Work-report/" itemprop="url" rel="index">
+                    <span itemprop="name">Work report</span>
                   </a>
                 </span>
 
@@ -367,7 +376,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  307
+                  641
                 </span>
               
 
@@ -383,7 +392,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  2
                 </span>
               
             </div>
@@ -405,15 +414,35 @@
       
 
       
-        <p>对0719那个python例子的优化，增加了自动拍照功能<br><i class="fa fa-github"></i> Github: <a href="https://github.com/Yukinooo7/Image-processing" target="_blank" rel="noopener">https://github.com/Yukinooo7/Image-processing</a></p>
+        <ol>
+<li>对0719那个python例子的优化，增加了自动拍照功能<br><i class="fa fa-github"></i> Github: <a href="https://github.com/Yukinooo7/Image-processing" target="_blank" rel="noopener">https://github.com/Yukinooo7/Image-processing</a></li>
+<li>计算了泰勒锥的质心，出现了一些意外之外的情况</li>
+</ol>
 <a id="more"></a>
-<p>原工作日志地址：<i class="far fa-snowflake"></i> <a href="https://www.yukino424.cn/2019/07/19/20190719-work-report/">https://www.yukino424.cn/2019/07/19/20190719-work-report/</a></p>
+<p>原工作日志地址：<a href="https://www.yukino424.cn/2019/07/19/20190719-work-report/">https://www.yukino424.cn/2019/07/19/20190719-work-report/</a></p>
 <h1 id="新加功能"><a href="#新加功能" class="headerlink" title="新加功能"></a>新加功能</h1><p>定时截图功能，默认时间间隔为60帧（视频帧率为30帧每秒，所以60帧为两秒）</p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 视频帧计算间隔频率</span><br><span class="line">time = 60</span><br><span class="line"></span><br><span class="line"># 按a进入自动截图模式   </span><br><span class="line">elif key == ord('a'):</span><br><span class="line">print("Automatic capture starts")</span><br><span class="line">    while ret:</span><br><span class="line">        ret, frame = cap.read()</span><br><span class="line">        cv2.imshow('images',frame)</span><br><span class="line">        if(c%time == 0):</span><br><span class="line">            capture_image(frame)</span><br><span class="line">        c = c+1</span><br><span class="line">        key_in = cv2.waitKey(1)</span><br><span class="line"></span><br><span class="line">        # 按q退出程序</span><br><span class="line">        if key_in == ord('q'):</span><br><span class="line">            print("Automatic capture halts")</span><br><span class="line">            break</span><br></pre></td></tr></tbody></table></figure>
 
 <hr>
 <h1 id="其他优化"><a href="#其他优化" class="headerlink" title="其他优化"></a>其他优化</h1><p>截图时候图片保存名称变化，原来为月日时分，发现满足不了大量的截图需求，现改为月日时分秒，更方便储存大量数据，但用py自带库最多实现每秒一张，不然会覆盖。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def capture_image(frame):</span><br><span class="line">    img_name = "{}.jpg".format(time.strftime("%m%d%H%M%S",time.localtime()))</span><br><span class="line">    cv2.imwrite(img_name,frame)</span><br><span class="line">    # cv2.imshow(img_name,frame)</span><br><span class="line">    print("{}.jpg".format(time.strftime("%m%d%H%M%S",time.localtime()))+" has been saved")</span><br></pre></td></tr></tbody></table></figure><script>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def capture_image(frame):</span><br><span class="line">    img_name = "{}.jpg".format(time.strftime("%m%d%H%M%S",time.localtime()))</span><br><span class="line">    cv2.imwrite(img_name,frame)</span><br><span class="line">    # cv2.imshow(img_name,frame)</span><br><span class="line">    print("{}.jpg".format(time.strftime("%m%d%H%M%S",time.localtime()))+" has been saved")</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h1 id="质心的计算"><a href="#质心的计算" class="headerlink" title="质心的计算"></a>质心的计算</h1><p>PYTHON OPENCV自带的公式，用来计算图形的质心。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># calculate moments of binary image</span><br><span class="line">M = cv2.moments(thresh)</span><br><span class="line"> </span><br><span class="line"># calculate x,y coordinate of center</span><br><span class="line">cX = int(M["m10"] / M["m00"])</span><br><span class="line">cY = int(M["m01"] / M["m00"])</span><br><span class="line"> </span><br><span class="line"># put text and highlight the center</span><br><span class="line">cv2.circle(img, (cX, cY), 5, (255, 255, 0), -1)</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<p>但遇到了一些问题</p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>当处理其他图片时，质心都在图形的中间，只有处理泰勒锥的时候，所有泰勒锥，不管好坏，都在一个点，只有八大类里面的标准泰勒锥是在锥形内部。所有点都在同一个位置，而且锥形面积大致相同，M10 和M01的数据也大致相同，只有Standard的所有数据都不同。</p>
+<h2 id="Sample-images"><a href="#Sample-images" class="headerlink" title="Sample images"></a>Sample images</h2><p><img src="/images/20190729/centroid/Standard.jpg" alt><br><img src="/images/20190729/centroid/Broken.jpg" alt><br><img src="/images/20190729/centroid/Multijet.jpg" alt><br><img src="/images/20190729/centroid/Huge.jpg" alt><br><img src="/images/20190729/centroid/Tiny.jpg" alt><br><img src="/images/20190729/centroid/Dry.jpg" alt><br><img src="/images/20190729/centroid/Meniscus.jpg" alt><br><img src="/images/20190729/centroid/Discharge.jpg" alt></p>
+<hr>
+<h2 id="可能的原因"><a href="#可能的原因" class="headerlink" title="可能的原因"></a>可能的原因</h2><p>可能当时拍摄的时候只考虑了电压的原因，当电压改变时，jet受到电场力的影响，出现了不同种类的反应，但是由于流速和溶液浓度没有改变，导致jet的量是一定的。<br>但该说法不成立，因为huge和Tiny的主要影响因素就是流速。<br>而且，我们上周拍摄的图片计算的质心也是在同一点，可能有些地方出现了BUG。</p>
+<h1 id="明日目标"><a href="#明日目标" class="headerlink" title="明日目标"></a>明日目标</h1><ol>
+<li>Experiment data capture</li>
+<li>Line detection</li>
+<li>Angle detection</li>
+</ol>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -455,6 +484,8 @@
     <footer class="post-footer">
       
         <div class="post-tags">
+          
+            <a href="/tags/Image-processing/" rel="tag"><i class="fa fa-tag"></i> Image processing</a>
           
             <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
@@ -633,7 +664,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#新加功能"><span class="nav-number">1.</span> <span class="nav-text">新加功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他优化"><span class="nav-number">2.</span> <span class="nav-text">其他优化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#新加功能"><span class="nav-number">1.</span> <span class="nav-text">新加功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他优化"><span class="nav-number">2.</span> <span class="nav-text">其他优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#质心的计算"><span class="nav-number">3.</span> <span class="nav-text">质心的计算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">4.</span> <span class="nav-text">问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-images"><span class="nav-number">4.1.</span> <span class="nav-text">Sample images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可能的原因"><span class="nav-number">4.2.</span> <span class="nav-text">可能的原因</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#明日目标"><span class="nav-number">5.</span> <span class="nav-text">明日目标</span></a></li></ol></div>
             
 
           </div>
@@ -674,7 +705,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">total words: 2.8k</span>
+  <span class="post-count">total words: 3.1k</span>
 </div>
 
         
