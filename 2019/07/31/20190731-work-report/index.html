@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="Experiment,Image processing,Python,">
+  <meta name="keywords" content="Image processing,Python,">
 
 
 
@@ -99,28 +99,27 @@
 
 
 
-<meta name="description" content="Today experimental images">
-<meta name="keywords" content="Experiment,Image processing,Python">
+<meta name="description" content="尝试了用腐蚀和膨胀进行图片的预处理">
+<meta name="keywords" content="Image processing,Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="20190718 work report">
-<meta property="og:url" content="https://www.yukino424.cn/2019/07/18/20190718-work-report/index.html">
+<meta property="og:title" content="20190731-work-report">
+<meta property="og:url" content="https://www.yukino424.cn/2019/07/31/20190731-work-report/index.html">
 <meta property="og:site_name" content="Yukino">
-<meta property="og:description" content="Today experimental images">
+<meta property="og:description" content="尝试了用腐蚀和膨胀进行图片的预处理">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://www.yukino424.cn/images/20190718/07181041.jpg">
-<meta property="og:image" content="https://www.yukino424.cn/images/20190718/07181134.jpg">
-<meta property="og:image" content="https://www.yukino424.cn/images/20190718/07181145.jpg">
-<meta property="og:image" content="https://www.yukino424.cn/images/20190718/07181208.jpg">
-<meta property="og:image" content="https://www.yukino424.cn/images/20190718/lateral_camera.jpg">
-<meta property="og:image" content="https://www.yukino424.cn/images/20190718/07181114.jpg">
-<meta property="og:image" content="https://www.yukino424.cn/images/20190718/07181216.jpg">
-<meta property="og:image" content="https://www.yukino424.cn/images/20190718/07181217.jpg">
-<meta property="og:image" content="https://www.yukino424.cn/images/20190718/vertical_camera.jpg">
-<meta property="og:updated_time" content="2019-07-18T14:58:33.875Z">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190731/erosion.png">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190731/dilation.png">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190731/erosion_3_1.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190731/dilation_3_1.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190731/erosion_3_2.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190731/dilation_3_2.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190731/erosion_3_3.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190731/dilation_3_3.jpg">
+<meta property="og:updated_time" content="2019-07-31T09:16:11.296Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="20190718 work report">
-<meta name="twitter:description" content="Today experimental images">
-<meta name="twitter:image" content="https://www.yukino424.cn/images/20190718/07181041.jpg">
+<meta name="twitter:title" content="20190731-work-report">
+<meta name="twitter:description" content="尝试了用腐蚀和膨胀进行图片的预处理">
+<meta name="twitter:image" content="https://www.yukino424.cn/images/20190731/erosion.png">
 
 
 
@@ -151,13 +150,13 @@
 
 
 
-  <link rel="canonical" href="https://www.yukino424.cn/2019/07/18/20190718-work-report/">
+  <link rel="canonical" href="https://www.yukino424.cn/2019/07/31/20190731-work-report/">
 
 
 
 
 
-  <title>20190718 work report | Yukino</title>
+  <title>20190731-work-report | Yukino</title>
   
 
 
@@ -294,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.yukino424.cn/2019/07/18/20190718-work-report/">
+    <link itemprop="mainEntityOfPage" href="https://www.yukino424.cn/2019/07/31/20190731-work-report/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lingyun">
@@ -311,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">20190718 work report</h1>
+          <h1 class="post-title" itemprop="name headline">20190731-work-report</h1>
         
 
         <div class="post-meta">
@@ -323,8 +322,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-18T10:39:58+08:00">
-                2019-07-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-31T16:43:31+08:00">
+                2019-07-31
               </time>
             
 
@@ -377,7 +376,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  157
+                  245
                 </span>
               
 
@@ -415,17 +414,24 @@
       
 
       
-        <p>Today experimental images</p>
+        <ol>
+<li>尝试了用腐蚀和膨胀进行图片的预处理</li>
+</ol>
 <a id="more"></a>
+<h1 id="Image-Erosion-and-Dilation"><a href="#Image-Erosion-and-Dilation" class="headerlink" title="Image Erosion and Dilation"></a>Image Erosion and Dilation</h1><h2 id="这里用到了opencv自带的erode和dilate函数"><a href="#这里用到了opencv自带的erode和dilate函数" class="headerlink" title="这里用到了opencv自带的erode和dilate函数"></a>这里用到了opencv自带的erode和dilate函数</h2><p><img src="/images/20190731/erosion.png" alt><br><img src="/images/20190731/dilation.png" alt></p>
+<h2 id="Sample-code"><a href="#Sample-code" class="headerlink" title="Sample code"></a>Sample code</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># image erosion</span><br><span class="line"># 设置卷积核</span><br><span class="line">kernel = np.ones((3,3),np.uint8)</span><br><span class="line"># 迭代处理的次数</span><br><span class="line">times = 2</span><br><span class="line"># 图像腐蚀处理，thresh是二值化处理后的图像</span><br><span class="line">erosion = cv2.erode(thresh,kernal, iterations = times)</span><br><span class="line">dilation = cv2.dilate(thresh,kernal)</span><br></pre></td></tr></tbody></table></figure>
 
-<h1 id="Observe-the-Taylor-Cone"><a href="#Observe-the-Taylor-Cone" class="headerlink" title="Observe the Taylor Cone"></a>Observe the Taylor Cone</h1><h2 id="置于stage的右侧"><a href="#置于stage的右侧" class="headerlink" title="置于stage的右侧"></a>置于stage的右侧</h2><p>效果不佳，锥形太小，无效图像太多，包括支架和针头。并且，光源不集中，泰勒锥受光不均匀，处理难度较高</p>
-<p><img src="/images/20190718/07181041.jpg" alt></p>
-<h2 id="stage上面更靠近nozzle"><a href="#stage上面更靠近nozzle" class="headerlink" title="stage上面更靠近nozzle"></a>stage上面更靠近nozzle</h2><p>简单说，缺个灯，<strong>@Xunjieliu</strong></p>
-<p><img src="/images/20190718/07181134.jpg" alt><br><img src="/images/20190718/07181145.jpg" alt><br><img src="/images/20190718/07181208.jpg" alt></p>
-<h2 id="Camera-Position"><a href="#Camera-Position" class="headerlink" title="Camera Position"></a>Camera Position</h2><p><img src="/images/20190718/lateral_camera.jpg" alt></p>
 <hr>
-<h1 id="Observe-the-Scaffold"><a href="#Observe-the-Scaffold" class="headerlink" title="Observe the Scaffold"></a>Observe the Scaffold</h1><h2 id="L1000拍摄效果良好，但由于精度太高，调焦时间过长，固定后该情况可以解决"><a href="#L1000拍摄效果良好，但由于精度太高，调焦时间过长，固定后该情况可以解决" class="headerlink" title="L1000拍摄效果良好，但由于精度太高，调焦时间过长，固定后该情况可以解决"></a>L1000拍摄效果良好，但由于精度太高，调焦时间过长，固定后该情况可以解决</h2><p><strong>样品</strong><br><img src="/images/20190718/07181114.jpg" alt><br><img src="/images/20190718/07181216.jpg" alt><br><img src="/images/20190718/07181217.jpg" alt></p>
-<p><strong>Camera position</strong><br><img src="/images/20190718/vertical_camera.jpg" alt></p>
+<h2 id="不同迭代次数"><a href="#不同迭代次数" class="headerlink" title="不同迭代次数"></a>不同迭代次数</h2><p>迭代次数不同可以消除泰勒锥内部的印象因素，但不同的卷积核对锥形外的分叉影响不同</p>
+<hr>
+<h3 id="Iteration-time-1"><a href="#Iteration-time-1" class="headerlink" title="Iteration time = 1"></a>Iteration time = 1</h3><h2 id="Erosion"><a href="#Erosion" class="headerlink" title="Erosion"></a>Erosion</h2><p><img src="/images/20190731/erosion_3_1.jpg" alt></p>
+<h2 id="Dilation"><a href="#Dilation" class="headerlink" title="Dilation"></a>Dilation</h2><p><img src="/images/20190731/dilation_3_1.jpg" alt></p>
+<h3 id="Iteration-time-2"><a href="#Iteration-time-2" class="headerlink" title="Iteration time = 2"></a>Iteration time = 2</h3><h2 id="Erosion-1"><a href="#Erosion-1" class="headerlink" title="Erosion"></a>Erosion</h2><p><img src="/images/20190731/erosion_3_2.jpg" alt></p>
+<h2 id="Dilation-1"><a href="#Dilation-1" class="headerlink" title="Dilation"></a>Dilation</h2><p><img src="/images/20190731/dilation_3_2.jpg" alt></p>
+<h3 id="Iteration-time-3"><a href="#Iteration-time-3" class="headerlink" title="Iteration time = 3"></a>Iteration time = 3</h3><h2 id="Erosion-2"><a href="#Erosion-2" class="headerlink" title="Erosion"></a>Erosion</h2><p><img src="/images/20190731/erosion_3_3.jpg" alt></p>
+<h2 id="Dilation-2"><a href="#Dilation-2" class="headerlink" title="Dilation"></a>Dilation</h2><p><img src="/images/20190731/dilation_3_3.jpg" alt></p>
+<hr>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>可能需要对大量数据进行测试，找到合适的迭代次数和卷积核，对这张图片来说，<strong>卷积核为3*3</strong>，<strong>erosion迭代次数为2</strong>，<strong>dilation迭代次数为1</strong></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -469,8 +475,6 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Experiment/" rel="tag"><i class="fa fa-tag"></i> Experiment</a>
-          
             <a href="/tags/Image-processing/" rel="tag"><i class="fa fa-tag"></i> Image processing</a>
           
             <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
@@ -486,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/17/20190717-work-report/" rel="next" title="20190717 work report">
-                <i class="fa fa-chevron-left"></i> 20190717 work report
+              <a href="/2019/07/30/20190730-work-report/" rel="next" title="20190730-work-report">
+                <i class="fa fa-chevron-left"></i> 20190730-work-report
               </a>
             
           </div>
@@ -495,10 +499,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/19/20190719-work-report/" rel="prev" title="20190719 work report">
-                20190719 work report <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -654,7 +654,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Observe-the-Taylor-Cone"><span class="nav-number">1.</span> <span class="nav-text">Observe the Taylor Cone</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#置于stage的右侧"><span class="nav-number">1.1.</span> <span class="nav-text">置于stage的右侧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stage上面更靠近nozzle"><span class="nav-number">1.2.</span> <span class="nav-text">stage上面更靠近nozzle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Camera-Position"><span class="nav-number">1.3.</span> <span class="nav-text">Camera Position</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Observe-the-Scaffold"><span class="nav-number">2.</span> <span class="nav-text">Observe the Scaffold</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#L1000拍摄效果良好，但由于精度太高，调焦时间过长，固定后该情况可以解决"><span class="nav-number">2.1.</span> <span class="nav-text">L1000拍摄效果良好，但由于精度太高，调焦时间过长，固定后该情况可以解决</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Image-Erosion-and-Dilation"><span class="nav-number">1.</span> <span class="nav-text">Image Erosion and Dilation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#这里用到了opencv自带的erode和dilate函数"><span class="nav-number">1.1.</span> <span class="nav-text">这里用到了opencv自带的erode和dilate函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-code"><span class="nav-number">1.2.</span> <span class="nav-text">Sample code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同迭代次数"><span class="nav-number">1.3.</span> <span class="nav-text">不同迭代次数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Iteration-time-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">Iteration time = 1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Erosion"><span class="nav-number">1.4.</span> <span class="nav-text">Erosion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dilation"><span class="nav-number">1.5.</span> <span class="nav-text">Dilation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Iteration-time-2"><span class="nav-number">1.5.1.</span> <span class="nav-text">Iteration time = 2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Erosion-1"><span class="nav-number">1.6.</span> <span class="nav-text">Erosion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dilation-1"><span class="nav-number">1.7.</span> <span class="nav-text">Dilation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Iteration-time-3"><span class="nav-number">1.7.1.</span> <span class="nav-text">Iteration time = 3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Erosion-2"><span class="nav-number">1.8.</span> <span class="nav-text">Erosion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dilation-2"><span class="nav-number">1.9.</span> <span class="nav-text">Dilation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">1.10.</span> <span class="nav-text">Conclusion</span></a></li></ol></li></ol></div>
             
 
           </div>
