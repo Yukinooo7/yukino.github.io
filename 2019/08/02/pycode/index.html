@@ -88,7 +88,7 @@
 
 
 
-  <meta name="keywords" content="Experiment,">
+  <meta name="keywords" content="Image processing,Python,">
 
 
 
@@ -99,18 +99,27 @@
 
 
 
-<meta name="description" content="今天来实验室固定了两个camera的位置，并且收集了一些很糟糕的测试图片，明天计划买点胶带过来固定好，再打印一遍，如果顺利，进行下一步，大量收集数据。          document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }">
-<meta name="keywords" content="Experiment">
+<meta name="description" content="今天重新测试了一下质心的代码，发现之前出错是因为选择对象的问题，默认的轮廓是整个图形框，现已修改。">
+<meta name="keywords" content="Image processing,Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="20190730 work report">
-<meta property="og:url" content="https://www.yukino424.cn/2019/07/30/20190730-work-report/index.html">
+<meta property="og:title" content="20190802-work-report">
+<meta property="og:url" content="https://www.yukino424.cn/2019/08/02/pycode/index.html">
 <meta property="og:site_name" content="Yukino">
-<meta property="og:description" content="今天来实验室固定了两个camera的位置，并且收集了一些很糟糕的测试图片，明天计划买点胶带过来固定好，再打印一遍，如果顺利，进行下一步，大量收集数据。          document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }">
+<meta property="og:description" content="今天重新测试了一下质心的代码，发现之前出错是因为选择对象的问题，默认的轮廓是整个图形框，现已修改。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-31T09:25:34.946Z">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190802/centroid/Standard.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190802/centroid/Broken.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190802/centroid/Multijet.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190802/centroid/Huge.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190802/centroid/Tiny.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190802/centroid/Dry.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190802/centroid/Meniscus.jpg">
+<meta property="og:image" content="https://www.yukino424.cn/images/20190802/centroid/Discharge.jpg">
+<meta property="og:updated_time" content="2019-08-02T04:33:13.403Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="20190730 work report">
-<meta name="twitter:description" content="今天来实验室固定了两个camera的位置，并且收集了一些很糟糕的测试图片，明天计划买点胶带过来固定好，再打印一遍，如果顺利，进行下一步，大量收集数据。          document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }">
+<meta name="twitter:title" content="20190802-work-report">
+<meta name="twitter:description" content="今天重新测试了一下质心的代码，发现之前出错是因为选择对象的问题，默认的轮廓是整个图形框，现已修改。">
+<meta name="twitter:image" content="https://www.yukino424.cn/images/20190802/centroid/Standard.jpg">
 
 
 
@@ -141,13 +150,13 @@
 
 
 
-  <link rel="canonical" href="https://www.yukino424.cn/2019/07/30/20190730-work-report/">
+  <link rel="canonical" href="https://www.yukino424.cn/2019/08/02/pycode/">
 
 
 
 
 
-  <title>20190730 work report | Yukino</title>
+  <title>20190802-work-report | Yukino</title>
   
 
 
@@ -284,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.yukino424.cn/2019/07/30/20190730-work-report/">
+    <link itemprop="mainEntityOfPage" href="https://www.yukino424.cn/2019/08/02/pycode/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lingyun">
@@ -301,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">20190730 work report</h1>
+          <h1 class="post-title" itemprop="name headline">20190802-work-report</h1>
         
 
         <div class="post-meta">
@@ -313,8 +322,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-30T14:46:30+08:00">
-                2019-07-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-02T10:36:08+08:00">
+                2019-08-02
               </time>
             
 
@@ -367,7 +376,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  115
+                  426
                 </span>
               
 
@@ -405,7 +414,21 @@
       
 
       
-        <p>今天来实验室固定了两个camera的位置，并且收集了一些很糟糕的测试图片，明天计划买点胶带过来固定好，再打印一遍，如果顺利，进行下一步，大量收集数据。</p>
+        <ol>
+<li>今天重新测试了一下质心的代码，发现之前出错是因为选择对象的问题，默认的轮廓是整个图形框，现已修改。</li>
+</ol>
+<a id="more"></a>
+<h1 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h1><p>之前将最终轮廓进行质心计算，发现总是把默认的窗口大小当成轮廓进行计算，现在把计算质心算法当成一个method写入轮廓识别的算法中。</p>
+<p>以后先把泰勒锥图像中其他因素全部排除，只留泰勒锥，在进行其他运算。</p>
+<p>直线检测遇到了一些问题，泰勒锥的两条边，不是均匀的直线，是由很多又短又细的小直线构成的，所以不太好实现文献里的内容（检测泰勒锥的夹角）</p>
+<h1 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h1><p>更新后的代码，变为轮廓检测的一部分</p>
+<h2 id="质心检测方法"><a href="#质心检测方法" class="headerlink" title="质心检测方法"></a>质心检测方法</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># contour 为前面检测出的轮廓，image为轮廓所在。</span><br><span class="line">def draw_centroid(contour,image):</span><br><span class="line">    M = cv2.moments(contour)</span><br><span class="line">    # calculate x,y coordinate of center</span><br><span class="line">    cX = int(M["m10"] / M["m00"])</span><br><span class="line">    cY = int(M["m01"] / M["m00"])</span><br><span class="line">    print(int(M["m10"]),int(M["m01"]),int(M["m00"]))</span><br><span class="line">    cv2.circle(image, (cX, cY), 5, (255, 255, 0), -1)</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="使用代码"><a href="#使用代码" class="headerlink" title="使用代码"></a>使用代码</h2><p>当轮廓识别完并且按顺序大小排序之后，画出每一个轮廓的质心</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># sortedContors为按大小排完顺序的轮廓</span><br><span class="line">for i in range(len(sortedContors)):</span><br><span class="line">        draw_centroid(sortedContors[i],image)</span><br><span class="line">        cv2.drawContours(image, sortedContors, i, (0,0,0), 1)</span><br><span class="line">        cv2.drawContours(img, sortedContors, i, (0, 255 - (2 * i), 0), 1)</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Sample-Images"><a href="#Sample-Images" class="headerlink" title="Sample Images"></a>Sample Images</h2><p><img src="/images/20190802/centroid/Standard.jpg" alt><br><img src="/images/20190802/centroid/Broken.jpg" alt><br><img src="/images/20190802/centroid/Multijet.jpg" alt><br><img src="/images/20190802/centroid/Huge.jpg" alt><br><img src="/images/20190802/centroid/Tiny.jpg" alt><br><img src="/images/20190802/centroid/Dry.jpg" alt><br><img src="/images/20190802/centroid/Meniscus.jpg" alt><br><img src="/images/20190802/centroid/Discharge.jpg" alt></p>
+<h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><p>如何利用质心判断泰勒锥形态好坏</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -449,7 +472,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Experiment/" rel="tag"><i class="fa fa-tag"></i> Experiment</a>
+            <a href="/tags/Image-processing/" rel="tag"><i class="fa fa-tag"></i> Image processing</a>
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
         </div>
       
@@ -462,8 +487,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/29/pycode/" rel="next" title="20190729 work report">
-                <i class="fa fa-chevron-left"></i> 20190729 work report
+              <a href="/2019/07/31/20190731-work-report/" rel="next" title="20190731 work report">
+                <i class="fa fa-chevron-left"></i> 20190731 work report
               </a>
             
           </div>
@@ -471,10 +496,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/31/20190731-work-report/" rel="prev" title="20190731 work report">
-                20190731 work report <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -526,8 +547,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -611,6 +641,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#错误原因"><span class="nav-number">1.</span> <span class="nav-text">错误原因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Debug"><span class="nav-number">2.</span> <span class="nav-text">Debug</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#质心检测方法"><span class="nav-number">2.1.</span> <span class="nav-text">质心检测方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用代码"><span class="nav-number">2.2.</span> <span class="nav-text">使用代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Images"><span class="nav-number">2.3.</span> <span class="nav-text">Sample Images</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TODO"><span class="nav-number">3.</span> <span class="nav-text">TODO</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
